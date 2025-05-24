@@ -35,8 +35,9 @@ def get_tree():
     name = request.args.get("artist")
     if not name:
         return jsonify({"error": "No artist specified"}), 400
-
+    print(f"Searching for artist: {name}")
     results = sp.search(q=name, type="artist", limit=1)
+    print(f"Raw search results: {results}")
     items = results["artists"]["items"]
     if not items:
         return jsonify({"error": "Artist not found"}), 404
