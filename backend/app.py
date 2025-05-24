@@ -37,20 +37,16 @@ def get_tree():
         return jsonify({"error": "No artist specified"}), 400
     print(f"Searching for artist: {name}")
     results = sp.search(q=name, type="artist", limit=1)
-  #  print(f"Raw search results: {results}")
     items = results["artists"]["items"]
+    
     if not items:
-        return jsonify({"error": "Artist not found"}), 404
- # Temporary hardcoded fix for Outkast
-artist_id = "1G9G7WwrXka3Z1r7aIDjI7"
-
-    root = items[0]
-    tree = {
-        "name": root["name"],
-        "id": root["id"],
-        "children": build_tree(root["id"])
+     # Temporary hardcoded fix for Outkast
+    artist_id = "1G9G7WwrXka3Z1r7aIDjI7"
+    root =  {
+        "name": "Outkast",
+        "id": artist_id
     }
-    return jsonify(tree)
-
+else:
+    root = items[0]
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
