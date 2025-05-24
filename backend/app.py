@@ -15,7 +15,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
 ))
 
 # Recursive related artists tree builder
-def build_tree(artist_id, depth=0, max_depth=2):
+def build_tree(artist_id, depth , max_depth=3):
     if depth >= max_depth:
         return []
     related = sp.artist_related_artists(artist_id)["artists"]
