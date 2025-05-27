@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-
+@app.route("/")
+def home():
+    return "who-influenced-who is running. Try /tree?artist=Outkast"
 load_dotenv()
 
 app = Flask(__name__)
