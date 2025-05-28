@@ -41,7 +41,7 @@ def get_tree():
     results = sp.search(q=name, type="artist", limit=1)
     items = results["artists"]["items"]
     
-    if not items:
+    #if not items:
      # Temporary hardcoded fix for Outkast
     artist_id = "1G9G7WwrXka3Z1r7aIDjI7"
     root =  {
