@@ -48,6 +48,7 @@ def get_tree():
         "name": "Outkast",
         "id": artist_id
     }
+    return root
 #else:
    # root = items[0]
 if __name__ == "__main__":
