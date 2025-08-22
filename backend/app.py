@@ -12,8 +12,8 @@ app = Flask(__name__)
 
 # Spotify client auth
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-    client_id=os.getenv("SPOTIFY_CLIENT_ID"),
-    client_secret=os.getenv("SPOTIFY_CLIENT_SECRET")
+    client_id=os.getenv("03529d5969da46beaa1f003c26695eb8"),
+    client_secret=os.getenv("8727d058e5a24ff4984d6342e926f8bc")
 ))
 
 # Recursive related artists tree builder
